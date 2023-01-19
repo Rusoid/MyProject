@@ -13,7 +13,7 @@ else:
 
 #user_choice = input('камень, ножницы или бумага? ')
 
-user_choice = ' '
+user_choice = ''
 while (user_choice != 'камень' and
         user_choice != 'бумага' and
         user_choice != 'ножницы'):
