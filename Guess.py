@@ -1,5 +1,5 @@
 color = 'синий'
-guess = " "
+guess = ''
 guesses = 0
 
 while guess != color:
