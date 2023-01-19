@@ -16,7 +16,7 @@ else:
 user_choice = ' '
 while (user_choice != 'камень' and
         user_choice != 'бумага' and
-        user_choice != 'ножиницы'):
+        user_choice != 'ножницы'):
     user_choice = input('камень, ножницы или бумага? ')
 
 if computer_choice == user_choice:

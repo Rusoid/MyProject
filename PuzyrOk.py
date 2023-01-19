@@ -12,8 +12,8 @@ length = len(scores)
 for i in range(length):
     print('Пузырьковый раствор #' + str(i), '- результат', scores[i])
     if scores[i] > high_score:
-        high_score = scores [i]
-        
+        high_score = scores[i]
+
 print('Пузырьковых тестов:', length)
 print('Наибольший результат:', high_score)
 
@@ -22,7 +22,7 @@ best_solution = []
 for i in range(length):
     if high_score == scores[i]:
         best_solution.append(i)
-        
+
 print('Растворы с наибольшим результатом:', best_solution)
 
 cost = 100.0
@@ -33,5 +33,3 @@ for i in range(length):
         cost = costs[i]
 print('Раствор', most_effective,
       'самый выгодный. Его цена -', costs[most_effective])
-
-
