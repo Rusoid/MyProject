@@ -23,7 +23,12 @@ number_of_scores = len(scores)
 solution_numbers = list(range(number_of_scores))
 
 bubble_sort(scores, solution_numbers)
-print(scores)
+#print(scores)
+print('Лучшие пузырьковые растворы')
+for i in range(0, 5):
+    print(str(i+1) + '.',
+        'Пузырьковый раствор #' + str(solution_numbers[i]),
+        '- результат:', scores[i])
 
 #smoothies = ['кокосовый', 'клубничный', 'банановый', 'ананасовый']
 #bubble_sort(smoothies)
