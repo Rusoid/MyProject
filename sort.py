@@ -6,8 +6,9 @@ def bubble_sort(scores, numbers):
         for i in range(0, len(scores)-1):
             if scores[i] < scores[i+1]:
                 temp = scores[i]
-                scores[i] > scores[i+1]
+                scores[i] = scores[i+1]
                 scores[i+1] = temp
+                temp = numbers[i]
                 numbers[i] = numbers[i+1]
                 numbers[i+1] = temp
                 swapped = True
@@ -29,8 +30,4 @@ for i in range(0, 5):
     print(str(i+1) + '.',
         'Пузырьковый раствор #' + str(solution_numbers[i]),
         '- результат:', scores[i])
-
-#smoothies = ['кокосовый', 'клубничный', 'банановый', 'ананасовый']
-#bubble_sort(smoothies)
-#print(smoothies)
 
