@@ -1,5 +1,6 @@
 import ch1text
 
+
 def count_sentences(text):
     count = 0
 
@@ -7,6 +8,7 @@ def count_sentences(text):
         if char == '.' or char == '?' or char == '!':
             count = count + 1
     return count
+
 
 def compute_readability(text):
     total_words = 0
@@ -20,5 +22,6 @@ def compute_readability(text):
 
     print(total_words, 'слов')
     print(total_sentences, 'предложений')
+
 
 compute_readability(ch1text.text)
