@@ -29,13 +29,16 @@ def count_syllables_in_word(word):
     vowels = "aeiouAEIOU"
     prev_char_was_vowels = False
 
-    for char in word:
+    for char in processed_word:
         if char in vowels:
             if not prev_char_was_vowels:
                 count = count + 1
             prev_char_was_vowels = True
         else:
             prev_char_was_vowels = False
+
+    if processed_word[-1] in 'yY':
+        count = count + 1
 
     return count
 
@@ -48,6 +51,21 @@ def count_sentences(text):
             count = count + 1
     return count
 
+def output_results(score):
+    if score >= 90:
+        print('Уровень 5-го класса')
+    elif score >= 80:
+        print('Уровень 6-го класса')
+    elif score >= 70:
+        print('Уровень 7-го класса')
+    elif score >= 60:
+        print('Уровень 8-9-го класса')
+    elif score >= 50:
+        print('Уровень 10-11-го класса')
+    elif score >= 30:
+        print('Уровень студента вуза')
+    else:
+        print('Уровень выпускника вуза')
 
 def compute_readability(text):
     total_words = 0
@@ -60,9 +78,9 @@ def compute_readability(text):
     total_sentences = count_sentences(text)
     total_syllables = count_syllables(words)
 
-    print(total_words, 'слов')
-    print(total_sentences, 'предложений')
-    print(total_syllables, 'слогов')
-
+    score = (206.835 - 1.015 * (total_words / total_sentences)
+                - 84.6 * (total_syllables / total_words))
+    print(score)
+    output_results(score)
 
 compute_readability(ch1text.text)
