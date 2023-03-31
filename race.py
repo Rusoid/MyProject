@@ -22,5 +22,22 @@ def setup():
         new_turtle.pendown()
         turtles.append(new_turtle)
 
+def race():
+    global turtles
+    winner = False
+    finishline = 590
+
+    while not winner:
+        for current_turtle in turtles:
+            move = random.randint(0, 2)
+            current_turtle.forward(move)
+
+            xcor = current_turtle.xcor()
+            if (xcor >= finishline):
+                winner = True
+                winner_color = current_turtle.color()
+                print('Победитель -', winner_color[0])
+
 setup()
+race()
 turtle.mainloop()
